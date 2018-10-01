@@ -133,3 +133,31 @@ def entry_del(Id,tb_name):
          except IOError:
              msg="Error"
          return msg    
+    
+def evlt(pswd):
+    if 8<len(pswd):
+        l=True
+    else:
+        l=False
+    for n in pswd:
+        if n in '0123456789':
+            num= True
+            break
+        else :
+            num= False
+        
+    for c in pswd:
+        if c in '!@#$%^&*()_+=':
+            spcl= True
+            break
+        else:
+            spcl= False
+    for a in pswd:
+        if a.upper():
+            a=True
+            break
+        else:
+            a=False
+
+    return bool(l and num and spcl and pswd)        
+       

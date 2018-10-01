@@ -40,11 +40,24 @@ s_txt = Entry(tab1,width=20)
 s_txt.grid(column=1, row=1)
 s_txt1 = Entry(tab1,width=20)
 s_txt1.grid(column=1, row=2)
-    
+s_lbl3=Label(tab1 , text="Note")
+s_lbl3.grid(column =0, row=5)
+s_lbl4=Label(tab1 , text=">Password must be 8 character long ")
+s_lbl4.grid(column =1, row=6)    
+s_lbl5=Label(tab1 , text=">It must contain Capital Letter")
+s_lbl5.grid(column =1, row=7)    
+s_lbl5=Label(tab1 , text=">It must contain a Special Character")
+s_lbl5.grid(column =1, row=8)    
+s_lbl5=Label(tab1 , text=">It must contain a Number")
+s_lbl5.grid(column =1, row=9)        
+
 def clicked():
         uname=s_txt.get()    
         upas=s_txt1.get()
-        msg=bk.signUp(uname,upas)
+        if bk.evlt(upas):
+            msg=bk.signUp(uname,upas)
+        else:
+            msg="Password not Valid "
         messagebox.showinfo('Message title', msg) 
     
 btn = Button(tab1, text="Click Me", command=clicked) 
